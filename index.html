@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartNest Solutions</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            animation: fadeInDown 1.5s ease;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        header p {
+            font-size: 1.2em;
+        }
+        .cta-btn {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background 0.3s ease;
+        }
+        .cta-btn:hover {
+            background-color: #f40612;
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
+            animation: fadeIn 2s ease;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        .card {
+            background: #121212;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(255,255,255,0.1);
+            flex: 1 1 220px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(255,255,255,0.2);
+        }
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: #1c1c1c;
+            color: white;
+        }
+        footer {
+            text-align: center;
+            background: #111;
+            color: white;
+            padding: 20px;
+        }
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        a {
+            color: #e50914;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SmartNest Solutions</h1>
+        <p>Effortless Living Starts Here</p>
+        <button class="cta-btn">Book a Free Demo</button>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>SmartNest Solutions transforms your home into an intelligent living space by automating lighting, security, climate control, and more. Our goal is to simplify your lifestyle through cutting-edge technology.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="card">
+                <h3>Smart Lighting</h3>
+                <p>Control and schedule your lighting from anywhere with voice or app control.</p>
+            </div>
+            <div class="card">
+                <h3>Security Systems</h3>
+                <p>Secure your home with smart locks, cameras, and motion sensors integrated with your phone.</p>
+            </div>
+            <div class="card">
+                <h3>Voice Control</h3>
+                <p>Integrate with Alexa, Google Assistant, and Siri for seamless voice commands.</p>
+            </div>
+            <div class="card">
+                <h3>Energy Monitoring</h3>
+                <p>Track and optimize your home’s energy usage for cost savings and sustainability.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="cta-btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SmartNest Solutions | Follow us on
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
+</body>
+</html>
