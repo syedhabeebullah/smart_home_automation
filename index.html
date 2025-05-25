@@ -139,8 +139,12 @@
             0% { opacity: 0; transform: translateY(-20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
+        $1
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
             100% { opacity: 1; }
         }
         a {
@@ -195,26 +199,20 @@
     <section id="services">
         <h2>Our Services</h2>
         <div class="services">
-            <div class="card">
-                <img src="smart-light.jpg" alt="Smart Lighting">
-                <h3>Smart Lighting</h3>
-                <p>Control and schedule your lighting from anywhere with voice or app control.</p>
-            </div>
-            <div class="card">
-                <img src="security-camera.jpg" alt="Security Systems">
-                <h3>Security Systems</h3>
-                <p>Secure your home with smart locks, cameras, and motion sensors integrated with your phone.</p>
-            </div>
-            <div class="card">
-                <img src="voice-control.jpg" alt="Voice Control">
-                <h3>Voice Control</h3>
-                <p>Integrate with Alexa, Google Assistant, and Siri for seamless voice commands.</p>
-            </div>
-            <div class="card">
-                <img src="energy-monitor.jpg" alt="Energy Monitoring">
-                <h3>Energy Monitoring</h3>
-                <p>Track and optimize your home’s energy usage for cost savings and sustainability.</p>
-            </div>
+            <div class="card" style="animation: fadeInUp 0.3s ease forwards; animation-delay: 0.2s; opacity: 0;">
+$1
+</div>
+            <div class="card" style="animation: fadeInUp 0.3s ease forwards; animation-delay: 0.4s; opacity: 0;">
+$1
+</div>
+            <div class="card" style="animation: fadeInUp 0.3s ease forwards; animation-delay: 0.6s; opacity: 0;">
+$1
+</div>
+        </div>
+        <div class="services">
+            <div class="card" style="animation: fadeInUp 0.3s ease forwards; animation-delay: 0.8s; opacity: 0;">
+$1
+</div>
         </div>
     </section>
 
