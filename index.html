@@ -13,10 +13,24 @@
             color: #fff;
             overflow-x: hidden;
         }
+        .breaking-banner {
+            background-color: #e50914;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+            animation: slideBanner 10s linear infinite;
+            white-space: nowrap;
+        }
+        @keyframes slideBanner {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
         header {
             background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
             color: white;
-            padding: 60px 20px;
+            padding: 60px 20px 40px;
             text-align: center;
             animation: fadeInDown 1.5s ease;
         }
@@ -61,6 +75,7 @@
             flex: 1 1 220px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+            cursor: pointer;
         }
         .card img {
             max-width: 100%;
@@ -68,10 +83,14 @@
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 15px;
+            transition: transform 0.3s ease;
         }
         .card:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 30px rgba(255,255,255,0.2);
+        }
+        .card:hover img {
+            transform: scale(1.1);
         }
         form input, form textarea, form button {
             width: 100%;
@@ -132,6 +151,8 @@
     </style>
 </head>
 <body>
+    <div class="breaking-banner">🎉 Special Offer: Get 10% off on your first booking! Limited time only 🎉</div>
+
     <header>
         <h1>Smart Home Automation Solutions</h1>
         <p>Effortless Living Starts Here</p>
@@ -140,7 +161,7 @@
 
     <section id="about">
         <h2>About Us</h2>
-        <p>Smart Home Automation Solutions transforms your home into an intelligent living space by automating lighting, security, climate control, and more. Our goal is to simplify your lifestyle through cutting-edge technology.</p>
+        <p>We specialize in turning ordinary homes into intelligent environments. At Smart Home Automation Solutions, our mission is to simplify your life through smart lighting, advanced security, voice-activated controls, and energy-saving systems — all tailored to your lifestyle. With user-friendly interfaces and seamless integration, we bring the future of smart living right into your hands.</p>
     </section>
 
     <section id="services">
@@ -179,24 +200,63 @@
         </form>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Smart Home Automation Solutions | Follow us on
-            <a href="#">Facebook</a> |
-            <a href="#">Instagram</a>
-        </p>
-    </footer>
+<audio id="bgMusic" loop>
+    <source src="background.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<div style="position: fixed; bottom: 10px; right: 10px; background: #111; border-radius: 8px; padding: 10px; box-shadow: 0 0 10px rgba(255,255,255,0.1);">
+    <button onclick="document.getElementById('bgMusic').play()" style="background: #e50914; color: white; border: none; padding: 6px 12px; margin-right: 5px; cursor: pointer; border-radius: 4px;">Play Music</button>
+    <button onclick="document.getElementById('bgMusic').pause()" style="background: #e50914; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px;">Pause Music</button>
+</div>
 
-    <div id="demoModal" class="modal" onclick="this.style.display='none'">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <span class="close" onclick="document.getElementById('demoModal').style.display='none'">&times;</span>
-            <h2>Book a Free Demo</h2>
-            <form action="https://formsubmit.co/habeeb3257@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="What would you like to automate?" rows="5" required></textarea>
-                <button type="submit" class="cta-btn">Submit Demo Request</button>
-            </form>
-        </div>
-    </div>
+<div id="demoModal" class="modal">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close" onclick="document.getElementById('demoModal').style.display='none'">&times;</span>
+    <h2>Book a Free Demo</h2>
+    <form action="https://formsubmit.co/habeeb3257@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="What would you like to automate?" rows="5" required></textarea>
+      <button type="submit" class="cta-btn">Submit Demo Request</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const countdownEl = document.createElement('div');
+  countdownEl.className = 'countdown';
+  document.querySelector('.breaking-banner').appendChild(countdownEl);
+
+  const endTime = new Date();
+  endTime.setDate(endTime.getDate() + 2);
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = endTime - now;
+    if (diff <= 0) {
+      countdownEl.textContent = 'Offer expired';
+      return;
+    }
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const minutes = Math.floor((diff % 3600000) / 60000);
+    const days = Math.floor(diff / 86400000);
+    countdownEl.textContent = `Offer ends in: ${days}d ${hours}h ${minutes}m`;
+  }
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  document.querySelectorAll(".cta-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const modal = document.getElementById("demoModal");
+      if (modal) modal.style.display = "flex";
+    });
+  });
+
+  window.addEventListener("click", e => {
+    const modal = document.getElementById("demoModal");
+    if (e.target === modal) modal.style.display = "none";
+  });
+</script>
+
 </body>
 </html>
