@@ -23,11 +23,9 @@
             animation: bounceBanner 2s infinite ease-in-out;
         }
         @keyframes bounceBanner {
-  0%, 100% { transform: translateY(0); }
-
-}
-  50% { transform: translateY(-5px); }
-}
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
   50% { transform: translateY(-5px); }
 
         }
@@ -172,22 +170,22 @@
         <h2>Our Services</h2>
         <div class="services">
             <div class="card">
-                <img src="smart-light.jpg" alt="Smart Lighting">
+                <img src="images/smart-light.jpg" alt="Smart Lighting">
                 <h3>Smart Lighting</h3>
                 <p>Control and schedule your lighting from anywhere with voice or app control.</p>
             </div>
             <div class="card">
-                <img src="security-camera.jpg" alt="Security Systems">
+                <img src="images/security-camera.jpg" alt="Security Systems">
                 <h3>Security Systems</h3>
                 <p>Secure your home with smart locks, cameras, and motion sensors integrated with your phone.</p>
             </div>
             <div class="card">
-                <img src="voice-control.jpg" alt="Voice Control">
+                <img src="images/voice-control.jpg" alt="Voice Control">
                 <h3>Voice Control</h3>
                 <p>Integrate with Alexa, Google Assistant, and Siri for seamless voice commands.</p>
             </div>
             <div class="card">
-                <img src="energy-monitor.jpg" alt="Energy Monitoring">
+                <img src="images/energy-monitor.jpg" alt="Energy Monitoring">
                 <h3>Energy Monitoring</h3>
                 <p>Track and optimize your home’s energy usage for cost savings and sustainability.</p>
             </div>
@@ -204,12 +202,12 @@
         </form>
     </section>
 
-<audio id="bgMusic" loop>
+<audio id="bgMusic" autoplay loop>
     <source src="background.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
 <div style="position: fixed; bottom: 10px; right: 10px; background: #111; border-radius: 8px; padding: 10px; box-shadow: 0 0 10px rgba(255,255,255,0.1);">
-    <button onclick="document.getElementById('bgMusic').play()" style="background: #e50914; color: white; border: none; padding: 6px 12px; margin-right: 5px; cursor: pointer; border-radius: 4px;">Play Music</button>
+    <button onclick="const bgMusic = document.getElementById('bgMusic'); bgMusic.muted = true; bgMusic.play()" style="background: #e50914; color: white; border: none; padding: 6px 12px; margin-right: 5px; cursor: pointer; border-radius: 4px;">Play Music</button>
     <button onclick="document.getElementById('bgMusic').pause()" style="background: #e50914; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px;">Pause Music</button>
 </div>
 
