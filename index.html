@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartNest Solutions</title>
+    <title>Smart Home Automation Solutions</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -60,6 +60,14 @@
             box-shadow: 0 4px 20px rgba(255,255,255,0.1);
             flex: 1 1 220px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .card img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
         }
         .card:hover {
             transform: scale(1.05);
@@ -95,36 +103,66 @@
         a:hover {
             text-decoration: underline;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #1c1c1c;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            animation: fadeIn 0.5s ease;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>SmartNest Solutions</h1>
+        <h1>Smart Home Automation Solutions</h1>
         <p>Effortless Living Starts Here</p>
-        <button class="cta-btn">Book a Free Demo</button>
+        <button class="cta-btn" onclick="document.getElementById('demoModal').style.display='flex'">Book a Free Demo</button>
     </header>
 
     <section id="about">
         <h2>About Us</h2>
-        <p>SmartNest Solutions transforms your home into an intelligent living space by automating lighting, security, climate control, and more. Our goal is to simplify your lifestyle through cutting-edge technology.</p>
+        <p>Smart Home Automation Solutions transforms your home into an intelligent living space by automating lighting, security, climate control, and more. Our goal is to simplify your lifestyle through cutting-edge technology.</p>
     </section>
 
     <section id="services">
         <h2>Our Services</h2>
         <div class="services">
             <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2020/03/20/22/02/smart-home-4958073_960_720.jpg" alt="Smart Lighting">
                 <h3>Smart Lighting</h3>
                 <p>Control and schedule your lighting from anywhere with voice or app control.</p>
             </div>
             <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2018/05/10/20/28/video-surveillance-3382633_960_720.jpg" alt="Security Systems">
                 <h3>Security Systems</h3>
                 <p>Secure your home with smart locks, cameras, and motion sensors integrated with your phone.</p>
             </div>
             <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2018/01/18/07/27/ai-3089843_960_720.jpg" alt="Voice Control">
                 <h3>Voice Control</h3>
                 <p>Integrate with Alexa, Google Assistant, and Siri for seamless voice commands.</p>
             </div>
             <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2017/02/20/16/57/house-2084352_960_720.jpg" alt="Energy Monitoring">
                 <h3>Energy Monitoring</h3>
                 <p>Track and optimize your home’s energy usage for cost savings and sustainability.</p>
             </div>
@@ -133,7 +171,7 @@
 
     <section id="contact">
         <h2>Contact Us</h2>
-        <form>
+        <form action="https://formsubmit.co/habeeb3257@gmail.com" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
@@ -142,10 +180,23 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 SmartNest Solutions | Follow us on
+        <p>&copy; 2025 Smart Home Automation Solutions | Follow us on
             <a href="#">Facebook</a> |
             <a href="#">Instagram</a>
         </p>
     </footer>
+
+    <div id="demoModal" class="modal" onclick="this.style.display='none'">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="document.getElementById('demoModal').style.display='none'">&times;</span>
+            <h2>Book a Free Demo</h2>
+            <form action="https://formsubmit.co/habeeb3257@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="What would you like to automate?" rows="5" required></textarea>
+                <button type="submit" class="cta-btn">Submit Demo Request</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
